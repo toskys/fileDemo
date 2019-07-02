@@ -2,5 +2,8 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/fileData/1559787834251.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/fileData/1561522439898.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/fileData/1561692984873.txt" charset="GBK" />
   </component>
 </project>

@@ -1,0 +1,9 @@
+1.方式一
+
+进入tomcat安装路径的bin目录中，运行sh catalina.sh run命令，将在终端动态显示catalina.out的内容
+
+2.方式二
+
+进入上述的安装目录下的logs目录中，执行如下命令
+
+tail -f catalina.out
