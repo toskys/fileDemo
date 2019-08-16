@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -16,9 +16,10 @@
 <hr/>
 <p>多文件上传</p>
 <form method="POST" enctype="multipart/form-data" action="batch">
-    <p>文件1：<input type="file" name="file"/></p>
+    <p th:text="">文件1：<input type="file" name="file"/></p>
     <p>文件2：<input type="file" name="file"/></p>
     <p><input type="submit" value="上传"/></p>
+
 </form>
 </body>
 </html>

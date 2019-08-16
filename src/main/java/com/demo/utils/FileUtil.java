@@ -93,8 +93,6 @@ public class FileUtil {
             while ((length = fileChannel.write(byteBuffer)) != 0) {
                 System.out.println("写入长度："+length);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
