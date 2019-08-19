@@ -8,12 +8,15 @@ import java.nio.channels.AsynchronousFileChannel;
 import java.nio.channels.CompletionHandler;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 public class FileUtil {
     Consumer consumer = new Consumer();
@@ -88,7 +91,7 @@ public class FileUtil {
         try {
             fileOutputStream = new FileOutputStream((new File(fileName)));
             FileChannel fileChannel = fileOutputStream.getChannel();
-            ByteBuffer byteBuffer = Charset.forName("utf-8").encode("你好");
+            ByteBuffer byteBuffer = StandardCharsets.UTF_8.encode("你好");
             int length=0;
             while ((length = fileChannel.write(byteBuffer)) != 0) {
                 System.out.println("写入长度："+length);
@@ -118,11 +121,7 @@ public class FileUtil {
             }
             Integer integer = future.get();
             System.out.println("Bytes read ["+integer+"]");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (IOException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
     }
@@ -157,4 +156,6 @@ public class FileUtil {
         asynchronousFileChannel.write(ByteBuffer.wrap("Sample".getBytes()), 0,"First Write", completionHandler);
         asynchronousFileChannel.write(ByteBuffer.wrap("Bos".getBytes()), 0, "Second Write",completionHandler);
     }
+
+
 }
