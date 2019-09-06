@@ -70,11 +70,9 @@ public class FileUtil {
                 System.out.println();
             }
             fileChannel.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             if (fileInputStream != null) {
                 try {
                     fileInputStream.close();

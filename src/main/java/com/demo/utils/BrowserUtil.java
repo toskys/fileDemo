@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 public class BrowserUtil {
 
     public static String getBrowser(HttpServletRequest request) {
-        String UserAgent = request.getHeader("USER-AGENT").toLowerCase();
+        String UserAgent = request.getHeader("User-Agent").toLowerCase();
         if (UserAgent.contains("msie"))
             return "IE";
         if (UserAgent.contains("firefox"))
