@@ -30,9 +30,9 @@ public class FileController {
 
     @GetMapping("/loadFile")
     public String loadFile(HttpServletResponse response) {
-        File localFile = new File(System.getProperty("user.dir") + "\\src\\main\\fileData", "1559787834251.txt");
+        File localFile = new File(System.getProperty("user.dir") + "\\src\\main\\fileData", "1561692984873.txt");
         response.setContentType("application/force-download");
-        response.setHeader("Content-Disposition", "attachment;fileName=" + "1559787834251.txt");
+        response.setHeader("Content-Disposition", "attachment;fileName=" + "1561692984873.txt");
         byte[] buffer = new byte[1024];
         FileInputStream fis = null; //文件输入流
         BufferedInputStream bis = null;
